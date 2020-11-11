@@ -10,7 +10,7 @@ import {
 } from 'antd';
 import AlertDelete from './AlertDelete';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getAllPosts, deletePost, getPost } from '../../../actions/post';
 import Comments from './Comments';
@@ -59,8 +59,8 @@ const PostTable = ({ post: { posts }, deletePost, getPost }) => {
             <Link to='/edit-post'>Edit Post</Link>
           </Button>
           <Badge count={data.count}>
-            <Button onClick={() => data.id} block>
-              <Link to='/discuss'>Link to Discuss</Link>
+            <Button onClick={() => console.log(data.id)} block>
+              <Link to='/discuss'><a >Link to Discuss</a></Link>
             </Button>
           </Badge>
         </>

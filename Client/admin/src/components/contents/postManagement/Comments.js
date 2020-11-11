@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CommentItem from './CommentItem';
 import Discuss from './Discuss';
-import { getAllPosts } from '../../../actions/post';
-const Comments = ({ getAllPosts, post: { posts, loading } }) => {
+import { getAllPosts, getPost } from '../../../actions/post';
+const Comments = ({ getAllPosts, post: { posts, loading }, getPost }) => {
   posts.map((post) => {
     // console.log(post.comments);
   });
@@ -25,4 +25,4 @@ const mapStateToProps = (state) => ({
   post: state.post,
 });
 
-export default connect(mapStateToProps, { getAllPosts })(Comments);
+export default connect(mapStateToProps, { getAllPosts, getPost })(Comments);
